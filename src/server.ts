@@ -3,12 +3,12 @@ import router from './router';
 import connectDB from './db';
 import ENV from './config';
 
-
+const cors = require('cors');
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cors());
 app.listen(ENV.PORT, () => {
     console.log(`Server is running on port:${ENV.PORT}`);
 });
