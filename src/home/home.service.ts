@@ -11,9 +11,7 @@ export const homeService = (req: Request, res: Response) => {
 export const licenseService = async (req: Request, res: Response) => {
     try {
         const data = await LicenseModel.find({});
-        res.json({
-            'data': data,
-        });
+        res.json(data);
     }
     catch (error) {
         console.error('Error fetching licenses:', error);
